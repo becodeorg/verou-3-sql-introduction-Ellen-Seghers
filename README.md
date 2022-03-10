@@ -93,6 +93,7 @@
 
 5. One of the learners changed his/her mind and decided to be an astronaut
     - Delete someone from the learners table<sup>\*</sup>
+      DELETE FROM learners WHERE ID = 3;
 
 ### 🌼 Nice to have (doable)
 
