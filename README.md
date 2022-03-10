@@ -68,7 +68,13 @@
 
 3. Try the following selects
     - Get all data from the groups<sup>\*</sup>
+      SELECT * FROM `groups`;
+   
     - Get the name and email of the first learner, and alias the name to learner_name<sup>\*</sup>
+      SELECT name AS learner_name, email 
+      FROM learners
+      WHERE id = 1;
+
 4. 💩 happens - a group needs to be postponed
     - Update the start date of the first_group (make it two months later)<sup>\*</sup>
     - Introduce a new field `status` which can contain a long text indicating the reason for postponing (bonus points if it's a creative one)
