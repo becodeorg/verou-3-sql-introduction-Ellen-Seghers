@@ -68,12 +68,33 @@
 
 3. Try the following selects
     - Get all data from the groups<sup>\*</sup>
-    - Get the name and email of the first learner, and alias the name to learner_name<sup>\*</sup>
+      SELECT * FROM `groups`;
+   
+      - Get the name and email of the first learner, and alias the name to learner_name<sup>\*</sup>
+        SELECT name AS learner_name, email 
+        FROM learners
+        WHERE id = 1;
+
+
 4. 💩 happens - a group needs to be postponed
     - Update the start date of the first_group (make it two months later)<sup>\*</sup>
-    - Introduce a new field `status` which can contain a long text indicating the reason for postponing (bonus points if it's a creative one)
+      UPDATE groups
+      SET start_date = '2021-11-22 00:00:00.000'
+      WHERE ID = 1;   
+
+      - Introduce a new field `status` which can contain a long text indicating the reason for postponing (bonus points if it's a creative one)
+        PART 1 add new field
+        ALTER TABLE groups
+        ADD status varchar(255)
+        PART 2 add long text
+        UPDATE groups
+        SET status = 'If you dont do this exercise correctly then chaos monkey will be doing his friendly thingy'
+        WHERE ID = 1;
+
+
 5. One of the learners changed his/her mind and decided to be an astronaut
     - Delete someone from the learners table<sup>\*</sup>
+      DELETE FROM learners WHERE ID = 3;
 
 ### 🌼 Nice to have (doable)
 
